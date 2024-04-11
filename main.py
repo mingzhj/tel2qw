@@ -7,7 +7,10 @@ telegram_api_id = os.environ["TELEGRAM_API_ID"]
 telegram_api_hash = os.environ["TELEGRAM_API_HASH"]
 webhook_url = os.environ["WEBHOOK_URL"]
 channel_username = os.environ["CHANNEL_USERNAME"]
-
+print("telegram_api_id:",telegram_api_id)
+print("telegram_api_hash:",telegram_api_hash)
+print("webhook_url:",webhook_url)
+print("channel_username:",channel_username)
 client = TelegramClient('my_tekegram', telegram_api_id, telegram_api_hash)
 
 @client.on(events.NewMessage(chats=(channel_username,)))
