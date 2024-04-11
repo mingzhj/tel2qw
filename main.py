@@ -3,7 +3,7 @@ import requests
 import os
 
 # Get the environment variables from GitHub Actions
-telegram_api_id = os.getenv("TELEGRAM_API_ID")
+telegram_api_id = os.environ.get("TELEGRAM_API_ID")
 telegram_api_hash = os.getenv("TELEGRAM_API_HASH")
 webhook_url = os.getenv("WEBHOOK_URL")
 channel_username = os.getenv("CHANNEL_USERNAME")
