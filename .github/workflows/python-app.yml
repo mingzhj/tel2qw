@@ -18,15 +18,7 @@ jobs:
 
     runs-on: ubuntu-latest
     
-    steps:
-    - shell: bash
-      env:
-        TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
-        TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
-        WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}      
-        CHANNEL_USERNAME: ${{ secrets.CHANNEL_USERNAME }} 
-      run: |
-        echo "$TELEGRAM_API_ID"
+    steps: 
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
@@ -38,3 +30,8 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi   
     - name:  Run forwarder
       run: python main.py
+      env:
+        TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
+        TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
+        WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}      
+        CHANNEL_USERNAME: ${{ secrets.CHANNEL_USERNAME }} 
