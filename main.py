@@ -6,15 +6,16 @@ import os
 telegram_api_id = os.environ["TELEGRAM_API_ID"]
 telegram_api_hash = os.environ["TELEGRAM_API_HASH"]
 webhook_url = os.environ["WEBHOOK_URL"]
+channel_username = os.environ["CHANNEL_USERNAME"]
 
 client = TelegramClient('session_name', api_id, api_hash)
 
-@client.on(events.NewMessage(chats=('channel_username',)))
+@client.on(events.NewMessage(chats=(channel_username,)))
 async def handle_message(event):
     message = event.message.message
     
     # 过滤掉包含特定关键字的消息
-    if 'keyword' not in message:
+    if '高速' not in message:
         return
     
     # 将消息转发到企业微信
