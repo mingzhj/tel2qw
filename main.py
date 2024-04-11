@@ -8,7 +8,7 @@ telegram_api_hash = os.environ["TELEGRAM_API_HASH"]
 webhook_url = os.environ["WEBHOOK_URL"]
 channel_username = os.environ["CHANNEL_USERNAME"]
 
-client = TelegramClient('session_name', api_id, api_hash)
+client = TelegramClient('my_tekegram', telegram_api_id, telegram_api_hash)
 
 @client.on(events.NewMessage(chats=(channel_username,)))
 async def handle_message(event):
