@@ -19,7 +19,14 @@ jobs:
     runs-on: ubuntu-latest
     
     steps: 
+    - name: Checkout repository
     - uses: actions/checkout@v3
+
+    - name: Access GitHub Variables
+      run: |
+         echo "GitHub Token: ${{ secrets.GITHUB_TOKEN }}"
+         echo "Custom Secret: ${{ secrets.CUSTOM_SECRET }}"
+    
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:
