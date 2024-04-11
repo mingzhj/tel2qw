@@ -1,9 +1,11 @@
 from telethon import TelegramClient, events
 import requests
+import os
 
-api_id = 123456  # 替换为您自己的 Telegram API ID
-api_hash = 'your_api_hash'  # 替换为您自己的 Telegram API 哈什
-webhook_url = 'your_webhook_url'  # 替换为您自己的企业微信机器人的 webhook URL
+# Get the environment variables from GitHub Actions
+telegram_api_id = os.environ["TELEGRAM_API_ID"]
+telegram_api_hash = os.environ["TELEGRAM_API_HASH"]
+webhook_url = os.environ["WEBHOOK_URL"]
 
 client = TelegramClient('session_name', api_id, api_hash)
 
