@@ -16,7 +16,10 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    env:
+      TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
+      TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
+      WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}      
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
