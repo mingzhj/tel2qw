@@ -21,7 +21,7 @@ jobs:
       TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
       TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
       WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}      
-      CHANNEL_USERNAME: ${{ env.CHANNEL_USERNAME }} 
+      CHANNEL_USERNAME: ${{ secrets.CHANNEL_USERNAME }} 
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
