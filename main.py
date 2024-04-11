@@ -2,6 +2,13 @@ from telethon import TelegramClient, events
 import requests
 import os
 
+# 获取所有环境变量
+env_vars = os.environ
+
+# 打印环境变量的值
+for key, value in env_vars.items():
+    print(f'{key}: {value}')
+
 # Get the environment variables from GitHub Actions
 telegram_api_id = os.environ.get("TELEGRAM_API_ID")
 telegram_api_hash = os.getenv("TELEGRAM_API_HASH")
